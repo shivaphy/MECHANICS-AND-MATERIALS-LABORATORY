@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCE Virtual Lab | Mechanics & Materials</title>
+    <style>
+        :root { 
+            --jce-blue: #002b5c; 
+            --accent-gold: #ffcc00; 
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+        }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg-light); color: #333; scroll-behavior: smooth; }
+        
+        header { 
+            background: var(--jce-blue); 
+            color: white; 
+            padding: 1rem 2rem; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 5px solid var(--accent-gold);
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .logo-box { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
+        .logo-box img { height: 75px; width: auto; background: white; padding: 5px; border-radius: 5px; }
+
+        .header-text { text-align: center; }
+        .header-text h1 { margin: 0; font-size: 1.6rem; letter-spacing: 1px; text-transform: uppercase; }
+        .header-text p { margin: 2px 0; font-size: 0.85rem; opacity: 0.9; line-height: 1.4; }
+
+        /* Landing Page Section */
+        #landing { 
+            height: 95vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            background: linear-gradient(rgba(0,43,92,0.85), rgba(0,43,92,0.85)), 
+                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80');
+            background-size: cover; 
+            background-position: center; 
+            text-align: center; 
+            color: white; 
+            padding: 0 20px;
+        }
+
+        .subtitle-hero {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .ad-container { max-width: 900px; margin-bottom: 30px; position: relative; padding-bottom: 20px; }
+        .ad-container::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50%; height: 4px; background: var(--accent-gold); }
+        .ad-main { font-size: 2.1rem; font-weight: 300; line-height: 1.4; margin: 0; }
+
+        .tagline { 
+            background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 8px; margin: 10px; width: 90%; max-width: 700px;
+            backdrop-filter: blur(5px); animation: float 6s infinite ease-in-out; border-left: 5px solid var(--accent-gold); text-align: left;
+        }
+
+        .enter-btn { margin-top: 30px; background: var(--accent-gold); color: var(--jce-blue); padding: 12px 40px; border-radius: 50px; font-weight: bold; cursor: pointer; border: none; transition: 0.3s; }
+        .enter-btn:hover { background: white; transform: scale(1.05); }
+
+        #dashboard { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .stats-bar { display: flex; justify-content: flex-end; gap: 15px; margin-bottom: 30px; }
+        .stat { background: white; padding: 8px 18px; border-radius: 30px; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        
+        .section-title { border-bottom: 3px solid var(--jce-blue); padding-bottom: 10px; color: var(--jce-blue); margin: 3rem 0 1.5rem 0; text-transform: uppercase; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.08); transition: 0.3s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-8px); }
+        .card-content { padding: 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        
+        .lab-link { display: inline-block; background: var(--jce-blue); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; margin-top: 15px; font-weight: 600; cursor: pointer; }
+        .lab-link:hover { background: var(--accent-gold); color: var(--jce-blue); }
+
+        .click-count { margin-top: 10px; font-size: 0.8rem; color: #666; font-weight: bold; }
+        .syllabus-container { width: 100%; height: 600px; border: 2px solid #ddd; border-radius: 10px; overflow: hidden; margin-top: 20px; }
+
+        footer { margin-top: 60px; text-align: center; border-top: 2px solid var(--jce-blue); padding: 40px 20px; background: #fff; }
+        .faculty-credit { font-size: 1.1rem; color: var(--jce-blue); font-weight: bold; margin-top: 20px; line-height: 1.6; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-box">
+        <img src="college logo.jpg" alt="JCE Logo">
+    </div>
+    <div class="header-text">
+        <h1>JAIN COLLEGE OF ENGINEERING, BELAGAVI</h1>
+        <p>(Approved by AICTE, New Delhi & Affiliated to VTU, Belagavi)</p>
+        <p>Accredited by NBA (Dept. of CVE, CSE, ECE and EEE).</p>
+    </div>
+</header>
+
+<section id="landing">
+    <div class="subtitle-hero">Virtual Lab: MECHANICS AND MATERIALS LABORATORY [1BMEML107/207]</div>
+    
+    <div class="ad-container">
+        <h2 class="ad-main">"Break the barriers of the physical lab. Experiment without limits, fail without fear, and discover what was once thought impossible"</h2>
+    </div>
+
+    <div class="tagline"><strong>1. Step into the Infinite:</strong> "Welcome to the frontier of digital exploration. Master the laws of nature from anywhere on Earth"</div>
+    <div class="tagline" style="animation-delay: 1.5s;"><strong>2. Be the Scientist You Dreamed Of:</strong> "Everything is theoretically impossible until it is done. We provide the tools; you provide the genius"</div>
+    <div class="tagline" style="animation-delay: 3s;"><strong>3. A Universe of Science at Your Fingertips:</strong> "Join a global community of pioneers. Science knows no borders, and neither should your ambition"</div>
+
+    <button class="enter-btn" onclick="document.getElementById('dashboard').scrollIntoView();">Launch Virtual Labs ↓</button>
+</section>
+
+<main id="dashboard">
+    <div class="stats-bar">
+        <div class="stat">🕒 Session Tracker: <strong id="timer">00:00:00</strong></div>
+        <div class="stat">👥 Active Users: <strong>5,492</strong></div>
+    </div>
+
+    <h2 class="section-title">Course Syllabus</h2>
+    <div class="syllabus-container">
+        <iframe src="1BMEML107.pdf" width="100%" height="100%"></iframe>
+    </div>
+
+    <h2 class="section-title">Virtual Experiments Dashboard</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-content">
+                <h3>01: Equilibrium of Concurrent Forces</h3>
+                <a class="lab-link" onclick="trackClick('lab1', 'https://shivaphy.github.io/Equilibrium-of-Concurrent-Forces/')">Start Lab</a>
+                <div class="click-count">Total Accesses: <span id="lab1-count">0</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>02: Verification-of-Lami's-Theorem</h3>
+                <a class="lab-link" onclick="trackClick('lab2', 'https://shivaphy.github.io/Verification-of-Lami-s-Theorem/')">Start Lab</a>
+                <div class="click-count">Total Accesses: <span id="lab2-count">0</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>03: Parallel-Force-System on Beam</h3>
+                <a class="lab-link" onclick="trackClick('lab3', 'https://shivaphy.github.io/Virtual-Lab_Parallel-Force-System-on-a-Simply-Supported-Beam/')">Start Lab</a>
+                <div class="click-count">Total Accesses: <span id="lab3-count">0</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>04: Virtual Soil Sieve Analysis</h3>
+                <a class="lab-link" onclick="trackClick('lab4', 'https://shivaphy.github.io/Virtual_Soil-Sieve-Analysis-Lab/')">Start Lab</a>
+                <div class="click-count">Total Accesses: <span id="lab4-count">0</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>05: Specific Gravity Laboratory</h3>
+                <a class="lab-link" onclick="trackClick('lab5', 'https://shivaphy.github.io/Specific-Gravity-Virtual-Laboratory/')">Start Lab</a>
+                <div class="click-count">Total Accesses: <span id="lab5-count">0</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>06: Verification of Varignon's Theorem</h3>
+                <a class="lab-link" onclick="trackClick('lab6', 'https://shivaphy.github.io/Virtual-Lab-Verification-of-Varignon-s-Theorem/')">Start Lab</a>
+                <div class="click-count">Total Accesses: <span id="lab6-count">0</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>07: Visual Identification of Building Materials</h3>
+                <a class="lab-link" onclick="trackClick('lab7', 'https://shivaphy.github.io/Visual-Identification-of-Building-Materials-Bricks-Stones-Tiles-M-Sand-Bitumen-Fly-Ash-GGBS-Steel-/')">Start Lab</a>
+                <div class="click-count">Total Accesses: <span id="lab7-count">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="faculty-credit">
+            Created by Dr. Shivkumar Math<br>
+            Professor & HOD, Department of Physics<br>
+            Jain College of Engineering, Belagavi
+        </div>
+        <p style="margin-top:20px;">Feedback via WhatsApp: 9964515505</p>
+        <a href="https://wa.me/919964515505" style="background:#25D366; color:white; padding:12px 30px; border-radius:8px; text-decoration:none; font-weight:bold; display: inline-block;">Message Us</a>
+    </footer>
+</main>
+
+<script>
+    let sec = 0;
+    setInterval(() => {
+        sec++;
+        let h = Math.floor(sec / 3600);
+        let m = Math.floor((sec % 3600) / 60);
+        let s = sec % 60;
+        document.getElementById('timer').innerText = 
+            String(h).padStart(2, '0') + ":" + String(m).padStart(2, '0') + ":" + String(s).padStart(2, '0');
+    }, 1000);
+
+    function trackClick(labId, url) {
+        let currentCount = localStorage.getItem(labId) || 0;
+        currentCount = parseInt(currentCount) + 1;
+        localStorage.setItem(labId, currentCount);
+        document.getElementById(labId + '-count').innerText = currentCount;
+        window.open(url, '_blank');
+    }
+
+    window.onload = function() {
+        for(let i = 1; i <= 7; i++) {
+            let labId = 'lab' + i;
+            let savedCount = localStorage.getItem(labId) || 0;
+            document.getElementById(labId + '-count').innerText = savedCount;
+        }
+    }
+</script>
+
+</body>
+</html>
